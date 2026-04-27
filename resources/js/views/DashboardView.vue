@@ -14,7 +14,7 @@ const handleLogout = async () => {
 
 <template>
     <div class="min-h-screen bg-gray-100">
-        <nav class="bg-white shadow-sm">
+        <!-- <nav class="bg-white shadow-sm">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16">
                     <div class="flex items-center">
@@ -22,7 +22,7 @@ const handleLogout = async () => {
                     </div>
                     <div class="flex items-center space-x-4">
                         <span class="text-gray-700">{{ authStore.user?.name }}</span>
-                        <button @click="handleLogout" 
+                        <button @click="handleLogout"
                             class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none transition ease-in-out duration-150">
                             <LogOut class="h-4 w-4 mr-2" />
                             Logout
@@ -30,7 +30,7 @@ const handleLogout = async () => {
                     </div>
                 </div>
             </div>
-        </nav>
+        </nav> -->
 
         <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">

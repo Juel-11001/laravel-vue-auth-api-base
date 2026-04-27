@@ -25,7 +25,7 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-    <div class="min-h-screen flex bg-white">
+    <div class="flex bg-white min-h-screen">
         <!-- Left Column - Illustration -->
         <div class="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-gray-50 via-gray-50 to-gray-100 flex-col justify-between p-12">
             <div class="flex items-center">
@@ -64,14 +64,6 @@ const handleSubmit = async () => {
 
         <!-- Right Column - Login Form -->
         <div class="w-full lg:w-1/2 flex flex-col justify-center px-8 py-12 lg:px-20">
-            <!-- Top right help -->
-            <!-- <div class="flex justify-end mb-6">
-                <div class="flex items-center text-gray-500 cursor-pointer hover:text-gray-900 transition-colors">
-                    <span class="text-sm mr-2">Need help?</span>
-                    <Settings class="w-4 h-4" />
-                </div>
-            </div> -->
-
             <div class="max-w-sm">
                 <h2 class="text-2xl font-bold text-gray-900 mb-1.5">Sign in to your account</h2>
                 <p class="text-gray-500 text-sm mb-5">

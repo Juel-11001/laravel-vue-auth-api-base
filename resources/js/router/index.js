@@ -1,25 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { useAuthStore } from '../stores/auth';
+import { authRoutes } from './modules/auth.routes';
+import { dashboardRoutes } from './modules/dashboard.routes';
+import { authGuard } from './guards';
 
 const routes = [
-    {
-        path: '/login',
-        name: 'login',
-        component: () => import('../views/Auth/LoginView.vue'),
-        meta: { guest: true }
-    },
-    {
-        path: '/register',
-        name: 'register',
-        component: () => import('../views/Auth/RegisterView.vue'),
-        meta: { guest: true }
-    },
-    {
-        path: '/dashboard',
-        name: 'dashboard',
-        component: () => import('../views/DashboardView.vue'),
-        meta: { auth: true }
-    },
+    ...authRoutes,
+    ...dashboardRoutes,
     {
         path: '/',
         redirect: '/dashboard'
@@ -32,19 +18,7 @@ const router = createRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-    const authStore = useAuthStore();
-
-    if (authStore.token && !authStore.user) {
-        await authStore.fetchUser();
-    }
-
-    if (to.meta.auth && !authStore.isAuthenticated) {
-        next('/login');
-    } else if (to.meta.guest && authStore.isAuthenticated) {
-        next('/dashboard');
-    } else {
-        next();
-    }
+    authGuard(to, from, next);
 });
 
 export default router;
